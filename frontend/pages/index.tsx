@@ -3,7 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Layout.module.css'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ posts }: any) => {
+  console.log(posts)
   return (
     <div className={styles.container}>
       <Head>
@@ -70,3 +71,14 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps = async () => {
+  const resp = await fetch('http://localhost:1337/api/posts')
+  const posts = await resp.json()
+
+  return {
+    props: {
+      posts,
+    },
+  }
+}
