@@ -1,10 +1,16 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Layout.module.css'
+import { StrapiCore } from '../models/StrapiCore'
+import { Post } from '../models/Post'
 
-const Home: NextPage = ({ posts }: any) => {
-  console.log(posts)
+type Props = {
+  posts: StrapiCore<Post>
+}
+
+const Home = ({ posts: { data } }: Props) => {
+  console.log(data)
   return (
     <div className={styles.container}>
       <Head>
@@ -70,9 +76,7 @@ const Home: NextPage = ({ posts }: any) => {
   )
 }
 
-export default Home
-
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const resp = await fetch('http://localhost:1337/api/posts')
   const posts = await resp.json()
 
@@ -82,3 +86,5 @@ export const getStaticProps = async () => {
     },
   }
 }
+
+export default Home
