@@ -2,10 +2,15 @@
   "name": "next-strapi",
   "version": "1.0.0",
   "scripts": {
+    "format:check": "prettier --check '**/*.{ts,tsx,json}' --ignore-path .prettierignore --ignore-path .gitignore",
+    "format:fix": "prettier --write '**/*.{ts,tsx,json}' --ignore-path .prettierignore --ignore-path .gitignore",
     "dev:frontend": "cd frontend && yarn dev",
     "build:frontend": "cd frontend && yarn build",
     "export:frontend": "cd frontend && yarn export",
     "start:frontend": "cd frontend && yarn start",
     "dev:backend": "cd backend && yarn dev"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
   }
 }
