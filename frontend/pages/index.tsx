@@ -2,8 +2,8 @@ import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Layout.module.css'
-import { StrapiCore } from '../models/StrapiCore'
-import { Post } from '../models/Post'
+import { Post, StrapiCore } from '@root/models'
+import { config } from '@root/config'
 
 type Props = {
   posts: StrapiCore<Post>
@@ -77,7 +77,7 @@ const Home = ({ posts: { data } }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const resp = await fetch('http://localhost:1337/api/posts')
+  const resp = await fetch(`${config.API_BASE_URL}/posts`)
   const posts = await resp.json()
 
   return {
