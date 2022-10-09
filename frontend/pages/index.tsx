@@ -10,7 +10,7 @@ type Props = {
 }
 
 const Home = ({ posts: { data } }: Props) => {
-  console.log(data)
+  // console.log(data)
   return (
     <div className={styles.container}>
       <Head>
