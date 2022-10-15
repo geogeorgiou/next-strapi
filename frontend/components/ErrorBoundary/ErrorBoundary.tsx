@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { createContext, ReactNode } from 'react'
 import { Page500 } from '../Page500'
 
@@ -11,7 +12,7 @@ type State = {
 }
 
 export const ErrorContext = createContext({
-  setError: (error: string) => {},
+  setError: (_: string) => {},
 })
 
 export class ErrorBoundary extends React.Component<Props, State> {

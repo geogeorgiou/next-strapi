@@ -37,7 +37,9 @@ export const getServerSideProps = async (context: any) => {
   const { id } = context.params
   const { locale } = context
 
-  let translation = undefined
+  console.log(locale)
+
+  let translation
 
   const baseUrl = `${config.API_BASE_URL}/posts`
   const initialRes = await fetch(`${baseUrl}/${id}`)
@@ -55,7 +57,7 @@ export const getServerSideProps = async (context: any) => {
 
   return {
     props: {
-      content: translation ? translation : attributes,
+      content: translation || attributes,
     },
   }
 }

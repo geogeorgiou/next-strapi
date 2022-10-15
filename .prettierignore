@@ -1,0 +1,13 @@
+# Add files here to ignore them from prettier formatting
+
+build
+dist
+coverage
+node-modules
+storybook-static
+yarn-lock
+deprecated-cypress/**
+allure-results/**
+results/**
+browserstack.json
+**/mockServiceWorker.js

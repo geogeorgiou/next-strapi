@@ -13,14 +13,6 @@
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module",
-    "project": "./tsconfig.base.json"
-  },
   "rules": {
     "no-console": 0,
     "no-undef": 0,
@@ -81,6 +73,7 @@
     "lines-between-class-members": 0,
     "import/no-import-module-exports": "off",
     "import/export": 0,
+    "jsx-a11y/anchor-is-valid": "off",
     // Disabled, we only require label to nest input OR use htmlFor
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/b800f40a2a69ad48015ae9226fbe879f946757ed/docs/rules/label-has-associated-control.md
     "jsx-a11y/label-has-associated-control": [

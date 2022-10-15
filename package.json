@@ -2,8 +2,9 @@
   "name": "next-strapi",
   "version": "1.0.0",
   "scripts": {
-    "format:check": "prettier --check '**/*.{ts,tsx,json}' --ignore-path .prettierignore --ignore-path .gitignore",
-    "format:fix": "prettier --write '**/*.{ts,tsx,json}' --ignore-path .prettierignore --ignore-path .gitignore",
+    "commit": "git-cz",
+    "format:check": "prettier --check '**/*.{ts,tsx}' --ignore-path .prettierignore --ignore-path .gitignore",
+    "format:fix": "prettier --write '**/*.{ts,tsx}' --ignore-path .prettierignore --ignore-path .gitignore",
     "dev:frontend": "cd frontend && yarn dev",
     "build:frontend": "cd frontend && yarn build",
     "export:frontend": "cd frontend && yarn export",
@@ -16,6 +17,7 @@
     "@commitlint/config-conventional": "^17.1.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
+    "commitizen": "^4.2.5",
     "eslint": "~8.15.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -30,8 +32,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "yarn format:check",
-      "yarn lint:check"
+      "yarn format:check"
     ]
   },
   "config": {

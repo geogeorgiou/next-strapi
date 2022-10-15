@@ -1,9 +1,13 @@
-import styles from '../../styles/Layout.module.css'
 import React from 'react'
+import styles from '../../styles/Layout.module.css'
 import { Nav } from '../Nav'
 import { Header } from '../Header'
 
-export const Layout = ({ children }: LayoutProps) => {
+type LayoutProps = {
+  children: React.ReactNode
+}
+
+export function Layout({ children }: LayoutProps) {
   return (
     <>
       <Nav />
@@ -15,8 +19,4 @@ export const Layout = ({ children }: LayoutProps) => {
       </div>
     </>
   )
-}
-
-type LayoutProps = {
-  children: React.ReactNode
 }

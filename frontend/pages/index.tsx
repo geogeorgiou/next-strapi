@@ -1,16 +1,16 @@
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Layout.module.css'
 import { Post, StrapiCore } from '@root/models'
 import { config } from '@root/config'
+import styles from '../styles/Layout.module.css'
 
 type Props = {
   posts: StrapiCore<Post>
 }
 
-const Home = ({ posts: { data } }: Props) => {
-  // console.log(data)
+function Home({ posts: { data } }: Props) {
+  console.log(data)
   return (
     <div className={styles.container}>
       <Head>
