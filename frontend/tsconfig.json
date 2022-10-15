@@ -15,9 +15,9 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@root/config": ["config"],
-      "@root/models": ["models"],
-      "@root/constants": ["constants"],
+      "@root/config": ["./config"],
+      "@root/models": ["./models"],
+      "@root/constants": ["./constants"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
